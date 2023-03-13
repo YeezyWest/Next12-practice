@@ -1,12 +1,12 @@
-import axios from 'axios';
-import { useEffect } from 'react';
-import { Toaster } from 'react-hot-toast';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import Head from 'next/head';
-import Layout from '../components/layout/Layout';
-import '../styles/global.css';
-import { getSingleMeal } from './meals/[id]';
+import axios from "axios";
+import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import Head from "next/head";
+import Layout from "../components/layout/Layout";
+import "../styles/global.css";
+import { getSingleMeal } from "./meals/[id]";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,17 +17,17 @@ const queryClient = new QueryClient({
   },
 });
 
-axios.defaults.baseURL = 'https://www.themealdb.com/api/json/v1/1/';
+axios.defaults.baseURL = "https://www.themealdb.com/api/json/v1/1/";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    if (localStorage.getItem('savedMeals')) {
-      const savedMeals = JSON.parse(localStorage.getItem('savedMeals'));
+    if (localStorage.getItem("savedMeals")) {
+      const savedMeals = JSON.parse(localStorage.getItem("savedMeals"));
       savedMeals.forEach((mealId) => {
-        queryClient.prefetchQuery(['singleMeal', mealId], getSingleMeal);
+        queryClient.prefetchQuery(["singleMeal", mealId], getSingleMeal);
       });
     } else {
-      localStorage.setItem('savedMeals', JSON.stringify([]));
+      localStorage.setItem("savedMeals", JSON.stringify([]));
     }
   }, []);
 
@@ -35,14 +35,17 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Mr West</title>
-        <meta name="description" content="Meal-khuj is a listing website of meal recipe" />
+        <meta
+          name="description"
+          content="Meal-khuj is a listing website of meal recipe"
+        />
       </Head>
       <QueryClientProvider client={queryClient}>
         <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              fontSize: '1.4rem',
+              fontSize: "1.4rem",
             },
           }}
         />
