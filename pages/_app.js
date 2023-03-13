@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }) {
         <title>Mr West</title>
         <meta
           name="description"
-          content="Meal-khuj is a listing website of meal recipe"
+          content="Always eat good meal"
         />
       </Head>
       <QueryClientProvider client={queryClient}>
