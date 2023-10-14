@@ -9,6 +9,9 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@emotion/react": "^11.11.1",
+		"@emotion/styled": "^11.11.0",
+		"@mui/material": "^5.14.12",
 		"@tanstack/react-query": "^4.2.3",
 		"@tanstack/react-query-devtools": "^4.2.3",
 		"axios": "^0.27.2",
@@ -21,13 +24,14 @@
 		"react-spinners": "^0.13.4"
 	},
 	"devDependencies": {
-		"eslint": "^7.32.0 || ^8.2.0",
+		"eslint": "^8.51.0",
 		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-next": "12.2.5",
 		"eslint-plugin-import": "^2.25.3",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
+		"prettier": "^3.0.3",
 		"sass": "^1.54.7"
 	}
 }
